@@ -1,0 +1,3 @@
+name: login
+path: '{core_path}components/login/'
+assets_path: '{assets_path}components/login/'

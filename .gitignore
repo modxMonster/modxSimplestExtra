@@ -1,0 +1,8 @@
+.idea
+*.sh
+html/*
+!html/_data
+!html/doodles
+mysql
+modxServer
+docker-compose.yml
