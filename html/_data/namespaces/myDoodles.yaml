@@ -1,0 +1,3 @@
+name: myDoodles
+path: '{base_path}doodlesMine/core/components/doodles/'
+assets_path: '{base_path}doodlesMine/assets/components/doodles/'

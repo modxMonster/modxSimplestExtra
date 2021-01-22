@@ -3,6 +3,7 @@
 html/*
 !html/_data
 !html/doodles
+!html/doodlesMine
 mysql
 modxServer
 docker-compose.yml

@@ -1,0 +1,3 @@
+name: mycmp
+path: '{base_path}doodles/core/components/mycmp/'
+assets_path: '{base_path}doodles/assets/components/mycmp/'

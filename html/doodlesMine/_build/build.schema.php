@@ -11,7 +11,7 @@ $mtime = $mtime[1] + $mtime[0];
 $tstart = $mtime;
 set_time_limit(0);
 
-$modx->log(modX::LOG_LEVEL_ERROR,'Testing: '. MODX_CORE_PATH);
+//$modx->log(modX::LOG_LEVEL_ERROR,'Testing: '. MODX_CORE_PATH);
 
 require_once dirname(__FILE__).'/build.config.php';
 include_once MODX_CORE_PATH . 'model/modx/modx.class.php';
@@ -43,6 +43,8 @@ if (!file_exists($sources['schema_file'])) {
     die();
 }
 $generator->parseSchema($sources['schema_file'],$sources['model']);
+$modx->addPackage('doodles', $sources['model']); // add package to make all models available
+$manager->createObjectContainer('Doodle');
 
 
 $mtime= microtime();

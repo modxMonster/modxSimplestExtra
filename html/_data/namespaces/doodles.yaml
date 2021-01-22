@@ -1,0 +1,3 @@
+name: doodles
+path: '{base_path}Doodles/core/components/doodles/'
+assets_path: '{base_path}Doodles/assets/components/doodles/'

@@ -6,7 +6,7 @@ static_file: doodles/_build/build.schema.php
 
 -----
 
-$base_path = dirname(dirname(MODX_BASE_PATH)).'/www/html/doodles/_build/';
+$base_path = dirname(dirname(MODX_BASE_PATH)).'/www/html/doodlesMine/_build/';
 /* change above line to your path */
 $o = '';
 $f = $base_path.'build.schema.php';
