@@ -21,7 +21,7 @@ services:
       MODX_ADMIN_EMAIL: admin@admin.com
       MODX_SERVER_ROUTE: 192.168.0.104
     volumes:
-      - '~/development/modxBasicExtra/html:/var/www/html'
+      - '~/development/borrar/modxSimplestExtra/html:/var/www/html'
   db:
     image: 'mysql:8.0.22'
     environment:
@@ -33,4 +33,4 @@ services:
       - '3306:3306'
     command: --default-authentication-plugin=mysql_native_password
     volumes:
-      - '~/development/modxBasicExtra/mysql:/var/lib/mysql'
+      - '~/development/borrar/modxSimplestExtra/mysql:/var/lib/mysql'

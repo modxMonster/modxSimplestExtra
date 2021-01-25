@@ -1,6 +1,11 @@
 .idea
-html/*
-!html/_data
-!html/doodles
-!html/doodlesMine
-mysql
+/html/assets
+/html/core
+/html/manager
+/html/connectors
+/mysql
+/html/.gitify
+/html/.htaccess
+/html/.htaccess.base
+/html/config.core.php
+/html/index.php
