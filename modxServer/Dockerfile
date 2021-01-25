@@ -26,6 +26,7 @@ RUN mkdir -p $TMP_STORE/ \
 ADD certs/ssl.crt /etc/apache2/ssl/ssl.crt
 ADD certs/ssl.key /etc/apache2/ssl/ssl.key
 ADD ./configFiles/default /etc/apache2/sites-available/000-default.conf
+
 RUN echo "Running development enviroment" \
     && a2enmod ssl \
     && mkdir -p /var/run/apache2/ \
@@ -38,6 +39,36 @@ RUN apt-get update && apt-get install -y libpng-dev libjpeg-dev unzip sudo libgm
 	&& docker-php-ext-configure gd --with-png-dir=/usr --with-jpeg-dir=/usr \
 	&& docker-php-ext-install gd soap opcache mysqli pdo pdo_mysql gmp \
 	&& curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+
+# Configure
+RUN pecl install xdebug && \
+    docker-php-ext-enable xdebug
+    
+# We add the rigth xdebug config
+RUN mkdir '/var/www/html/Standard input code'
+ADD configFiles/xdebug.ini /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
+
+#RUN echo "zend_extension=/usr/local/lib/php/extensions/no-debug-non-zts-20160303/xdebug.so" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
+#RUN echo "error_reporting = E_ALL" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
+##RUN echo "display_startup_errors = On" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
+#RUN echo "display_errors = On" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
+
+# relevant to this answer
+#RUN echo "xdebug.idekey=\"PHPSTORM\"" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
+#RUN echo "xdebug.remote_port=9000" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
+#RUN echo "xdebug.remote_enable=1" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
+#RUN echo "xdebug.remote_autostart=1" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
+#RUN echo "xdebug.remote_host=docker.for.win.localhost" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
+
+#RUN echo 'alias sf="php app/console"' >> ~/.bashrc
+#RUN echo 'alias sf3="php bin/console"' >> ~/.bashrc
+    #docker-php-ext-enable xdebug && \
+    #echo "zend_extension=/usr/local/lib/php/extensions/no-debug-non-zts-20131226/xdebug.so" >> $PHP_INI_DIR/php.ini && \
+    #echo "[xdebug]" >> $PHP_INI_DIR/php.ini && \
+    #echo "xdebug.remote_enable = 1" >> $PHP_INI_DIR/php.ini && \
+    #echo "xdebug.remote_connect_back = 0" >> $PHP_INI_DIR/php.ini && \
+    #echo "xdebug.remote_host = host.docker.internal" >> $PHP_INI_DIR/php.ini && \
+    #echo 'xdebug.idekey = "VSCODE"' >> $PHP_INI_DIR/php.ini
 
 # Install Composer
 #RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
