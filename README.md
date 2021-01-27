@@ -4,6 +4,7 @@ This repository holds a simple example of a modxExtra, this is intended for lear
 and can be used as a base template for new extra projects
 
 ## How to run
+[Here you can find](https://youtu.be/UJF5ATIzWG4) a video showing how to setup and run the current project
 This project depends on the basic modxMonster docker image, [check this repo](https://github.com/modxMonster/modxBaseEnviroment) to see how to set
 up the base image and get this running inside docker.
 
