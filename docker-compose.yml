@@ -19,7 +19,7 @@ services:
       MODX_ADMIN_USER: admin
       MODX_ADMIN_PASSWORD: admin
       MODX_ADMIN_EMAIL: admin@admin.com
-      MODX_SERVER_ROUTE: 192.168.0.104
+      MODX_SERVER_ROUTE: 172.25.247.114
     volumes:
       - '~/development/borrar/modxSimplestExtra/html:/var/www/html'
   db:

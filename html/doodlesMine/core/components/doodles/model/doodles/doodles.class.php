@@ -45,7 +45,7 @@ class Doodles {
     public function initialize($ctx = 'web') {
         switch ($ctx) {
             case 'mgr':
-                $this->modx->lexicon->load('doodles:default');
+                $this->modx->lexicon->load('myDoodles:default');
 
                 if (!$this->modx->loadClass('doodlesControllerRequest',$this->config['modelPath'].'doodles/request/',true,true)) {
                     return 'Could not load controller request handler.';

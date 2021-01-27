@@ -23,11 +23,11 @@ class MyDoodlesInitManagerController extends modExtraManagerController {
         return parent::initialize();
     }
     public function getLanguageTopics() {
-            return array('doodles:default');
+        return array('doodles:default');
     }
     public function checkPermissions() { return true;}
     public function process(array $scriptProperties = array()) {}
-    public function getPageTitle() { return $this->modx->lexicon('doodles'); }
+    public function getPageTitle() { return $this->modx->lexicon('myDoodles'); }
     public function loadCustomCssJs() {
         $this->addJavascript($this->doodles->config['jsUrl'].'mgr/widgets/doodles.grid.js');
         $this->addJavascript($this->doodles->config['jsUrl'].'mgr/widgets/home.panel.js');

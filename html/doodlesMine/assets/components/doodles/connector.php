@@ -7,7 +7,7 @@ $modx->log(modX::LOG_LEVEL_ERROR, 'Calling connector: '. ($corePath));
         
 require_once $corePath.'model/doodles/doodles.class.php';
 $modx->doodles = new Doodles($modx);
-$modx->lexicon->load('doodles:default');
+$modx->lexicon->load('myDoodles:default');
 /* handle request */
 $path = $modx->getOption('processorsPath',$modx->doodles->config,$corePath.'processors/');
 $modx->request->handleRequest(array(

@@ -1,3 +1,4 @@
+.vscode/launch.json
 .idea
 /html/assets
 /html/core
@@ -9,3 +10,4 @@
 /html/.htaccess.base
 /html/config.core.php
 /html/index.php
+
